@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-  width: 100%;
-  height: fit-content;
+  border: 2px solid rgba(52, 144, 255, 0.3);
+  border-radius: 10px;
+  padding: 3rem;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
