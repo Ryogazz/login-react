@@ -15,7 +15,7 @@ const ButtonStyled = styled.button`
   font-size: 1rem;
   border-radius: 0.2rem;
   color: white;
-  opacity: ${(({disabled}) => disabled ? '0.5' : '1')};
+  opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
 
   &:hover {
     transform: scale(1.04);

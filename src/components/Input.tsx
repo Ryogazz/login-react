@@ -1,16 +1,17 @@
-import React from 'react';
-import InputStyled from './styles/Input.styled';
-import Container from './styles/Container.styled';
+import React, { ChangeEventHandler } from 'react';
 import PropTypes from 'prop-types';
+import InputStyled from './styles/Input.styled';
 
 type Props = {
   placeholder: string;
   value: string;
   type: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: ChangeEventHandler<HTMLInputElement>;
 };
 
-export default function Input({ placeholder, onChange, value, type }: Props) {
+export default function Input({
+  placeholder, onChange, value, type,
+}: Props) {
   return (
     <InputStyled
       type={type}

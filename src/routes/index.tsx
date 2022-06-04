@@ -1,7 +1,8 @@
-import { Navigate, Route, Routes as RoutesSwitch } from 'react-router-dom'
-import PrivateRoute from './PrivateRoute'
-import Login from '../pages/Login'
-import Home from '../pages/Home'
+import React from 'react';
+import { Navigate, Route, Routes as RoutesSwitch } from 'react-router-dom';
+import PrivateRoute from './PrivateRoute';
+import Login from '../pages/Login';
+import Home from '../pages/Home';
 
 function Routes() {
   return (
@@ -11,7 +12,7 @@ function Routes() {
 
       <Route path="*" element={<Navigate to="/login" />} />
     </RoutesSwitch>
-  )
+  );
 }
 
-export default Routes
+export default Routes;

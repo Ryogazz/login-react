@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import { login } from '../../utils/wapAPI';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import Container from '../../components/styles/Container.styled';
-import styled from 'styled-components';
 
 const Display = styled.div`
   display: flex;
@@ -14,7 +15,7 @@ const Display = styled.div`
   background-color: #fff;
 `;
 
-const Login = () => {
+function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isDisabled, setIsDisabled] = useState(true);
@@ -23,6 +24,11 @@ const Login = () => {
     setIsDisabled(!(username && password));
   }, [username, password]);
 
+  const handleClick = () => {
+    login(username, password).then((data) => {
+      console.log(data);
+    });
+  };
 
   return (
     <Display>
@@ -39,34 +45,10 @@ const Login = () => {
           value={password}
           onChange={({ target }) => setPassword(target.value)}
         />
-        <Button disabled={ isDisabled } />
+        <Button disabled={isDisabled} onClick={handleClick} />
       </Container>
     </Display>
-
-    // <form>
-    //   <p>Login</p>
-
-    //   <label>
-    //     <p>
-    //       <strong>Nome de Usuário:</strong>
-    //     </p>
-    //     <input type="text" name="username" />
-    //   </label>
-
-    //   <br />
-
-    //   <label>
-    //     <p>
-    //       <strong>Senha:</strong>
-    //     </p>
-    //     <input type="password" name="password" />
-    //   </label>
-
-    //   <br />
-
-    //   <input type="submit" />
-    // </form>
   );
-};
+}
 
 export default Login;
