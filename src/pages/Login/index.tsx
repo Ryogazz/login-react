@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from 'react-router-dom';
+import * as yup from 'yup';
 import styled from 'styled-components';
 import { login } from '../../utils/wapAPI';
-import Input from '../../components/Input';
 import Button from '../../components/Button';
-import Container from '../../components/styles/Container.styled';
+import Container from '../../components/styles/Login.styled';
 import Error from '../../components/styles/Error.styled';
+import { Wrapper, Input } from '../../components/styles/Input.styled';
 
 const Display = styled.div`
   display: flex;
@@ -17,49 +20,54 @@ const Display = styled.div`
   background-color: #fff;
 `;
 
-function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [isDisabled, setIsDisabled] = useState(true);
+type FormData = {
+  username: string;
+  password: string;
+};
 
-  useEffect(() => {
-    setIsDisabled(!(username && password));
-  }, [username, password]);
+const loginSchema = yup.object().shape({
+  username: yup.string().required('Username is required'),
+  password: yup.string().required('Password is required'),
+});
+
+function Login() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: yupResolver(loginSchema),
+  });
+  const [error, setError] = useState('');
 
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    login(username, password).then(({ data }) => {
-      localStorage.setItem('token', data.token);
-      navigate('/home');
-    }).catch((err) => {
-      setError(err.message);
-      alert(err.message);
-    });
+  const onSubmit: SubmitHandler<FormData> = ({ username, password }) => {
+    setError('');
+    login(username, password)
+      .then(({ data }) => {
+        localStorage.setItem('token', data.token);
+        navigate('/home');
+      })
+      .catch((err) => {
+        setError(err.message);
+        alert(err.message);
+      });
   };
 
   return (
     <Display>
-      <Container>
-        <Input
-          type="text"
-          placeholder="Usuário"
-          value={username}
-          onChange={({ target }) => setUsername(target.value)}
-        />
-        <Input
-          type="password"
-          placeholder="Senha"
-          value={password}
-          onChange={({ target }) => setPassword(target.value)}
-        />
-        {
-          error && (
-            <Error>{error}</Error>
-          )
-        }
-        <Button disabled={isDisabled} onClick={handleClick} />
+      <Container onSubmit={handleSubmit(onSubmit)}>
+        <Wrapper>
+          <Input placeholder="Username" {...register('username')} />
+          {errors.username && <Error>{errors.username.message}</Error>}
+        </Wrapper>
+        <Wrapper>
+          <Input type="password" placeholder="Password" {...register('password')} />
+          {errors.password && <Error>{errors.password.message}</Error>}
+        </Wrapper>
+        {error && <Error>{error}</Error>}
+        <Button />
       </Container>
     </Display>
   );

@@ -22,14 +22,14 @@ export const login = async (username: string, password: string) => {
   }
 };
 
-export const getUser = async (token: string) => {
+export const getListStores = async (token: string | null) => {
   try {
-    const response = await wapAPI.get('/users/me', {
+    const response = await wapAPI.get('/stores', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
-    return response.data;
+    return response.data as { data: any[] };
   } catch (error) {
     throw new Error((error as AxiosError).response?.data?.data?.message);
   }

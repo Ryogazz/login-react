@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
-  border: 2px solid rgba(52, 144, 255, 0.3);
+const Container = styled.form`
   border-radius: 10px;
-  padding: 3rem;
+  padding: 4rem 3rem;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
-  margin: 1rem 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 `;
 
 export default Container;

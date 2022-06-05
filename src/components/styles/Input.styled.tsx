@@ -1,16 +1,31 @@
 import styled from 'styled-components';
 
-const Input = styled.input`
-  width: 18rem;
-  text-align: center;
-  border: 2px solid #3490ff;
-  border-radius: 5px;
-  margin: 10px 0;
-  font-size: 1rem;
-  padding: 0.4rem;
-  &:focus {
-    outline: 3px solid rgba(179, 179, 179, 0.3);
-  }
+export const Wrapper = styled.div`
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
 `;
 
-export default Input;
+export const Input = styled.input`
+  width: 15rem;
+  text-align: center;
+  border: 1px solid #93c5fd;
+  border-radius: 0.5rem;
+  margin: 0.8rem 0;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  padding: 0.6rem 0;
+  outline: none;
+  color: #71717a;
+
+  &::placeholder {
+    color: #71717a85;
+  }
+
+  &:focus {
+    border-color: #f59e0b;
+  }
+`;
