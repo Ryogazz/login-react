@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+// Css do componente button do styled-components
+
 const ButtonStyled = styled.button`
   background: #fb923c50;
   background: linear-gradient(
@@ -17,20 +19,19 @@ const ButtonStyled = styled.button`
   color: white;
   text-transform: uppercase;
   letter-spacing: 2px;
-
-  ${({ disabled }) => (disabled ? 'opacity: 0.5;' : (
+  min-width: 10rem;
+// Operador ternário resposavel pela condição de exibição do botão
+  ${({ disabled }) => (disabled ? 'opacity: 0.5; cursor: not-allowed' : (
     `
     opacity: 1;
     &:hover {
       transform: scale(1.025);
     }
-  
+
     &:active {
       transform: scale(1);
     }
     `))}
-
-
 `;
 
 export default ButtonStyled;

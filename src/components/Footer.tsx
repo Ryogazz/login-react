@@ -3,6 +3,8 @@ import {
   Container, Text, Author, Line,
 } from './styles/Footer.styled';
 
+// componente Footer com styled-components
+
 export default function Footer() {
   return (
     <Container>

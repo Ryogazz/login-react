@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 // Styled component para ser o bloco que abraça todos os componentes do rodapé
-export const Container = styled.header`
+export const Container = styled.div`
   width: 100%;
   display: flex;
   padding: 1rem 0;
@@ -11,6 +11,7 @@ export const Container = styled.header`
   background: #27272a;
   color: white;
   font-size: 0.85rem;
+  margin-top: 3rem;
 `;
 
 // Linha de estilo alaranjada acima das infos do footer

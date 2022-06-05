@@ -10,7 +10,7 @@ function Routes() {
       <Route path="/login" element={<Login />} />
       <Route path="/home" element={<PrivateRoute element={<Home />} />} />
 
-      <Route path="*" element={<Navigate to="/login" />} />
+      <Route path="*" element={<Navigate to="/home" />} />
     </RoutesSwitch>
   );
 }

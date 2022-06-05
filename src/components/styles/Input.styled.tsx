@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+// Css do componente input do styled-components
+
 export const Wrapper = styled.div`
   width: 100%;
   height: fit-content;
