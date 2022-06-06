@@ -36,8 +36,8 @@ Para elaboração dessa aplicação foi utilizado [React][react], [TypeScript][t
 
 ## Pontos a melhorar
 
-- [ ] Testes unitarios
-- [ ] O requisito bonus: Ao enviar a requisição para Ativar, filtrar apenas os itens selecionados que estão inativos e
+- [ ] Testes unitários
+- [ ] O requisito bônus: Ao enviar a requisição para Ativar, filtrar apenas os itens selecionados que estão inativos e
   vice-versa
 
 
