@@ -1,10 +1,10 @@
-# Teste tecnico
+# Teste técnico
 
 ## Descrição do Projeto
 
 Esse projeto foi desenvolvido para um teste técnico de frontend. Ele consiste em elaborar um sistema de login e página inicial de uma aplicação que consiste em listar Lojas que serão recebidas através de uma API.
 
-Para elaboração dessa aplicação foi utilizado [React][react], [TypeScript][typescript] e a estilização foi feita esclusivamente com [StyledComponents][styledcomponent] e com foco em desenvolvimento "mobile first"
+Para elaboração dessa aplicação foi utilizado [React][react], [TypeScript][typescript] e a estilização foi feita exclusivamente com [StyledComponents][styledcomponent] e com foco em desenvolvimento "mobile first"
 
 
 ## Tecnologias Ultilizadas
@@ -21,7 +21,7 @@ Para elaboração dessa aplicação foi utilizado [React][react], [TypeScript][t
 ## Desafios do Teste
 
 - Aprender como funciona e aplicar novas bibliotecas ao projeto;
-- Criar uma aplicação funcional totalmente do 0 utilizando [StyledComponents][styledcomponent] e [TypeScript][typescript];
+- Criar uma aplicação funcional totalmente do zero utilizando [StyledComponents][styledcomponent] e [TypeScript][typescript];
 - Criar um projeto [React][react] com [TypeScript][typescript];
 - Gerenciamento de tempo;
 
