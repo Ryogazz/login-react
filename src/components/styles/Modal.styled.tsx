@@ -6,7 +6,7 @@ type Props = {
   toggleBg: boolean;
 }
 type Props2 = {
-  status: number;
+  status: boolean;
 }
 
 export const Background = styled.button`
@@ -59,7 +59,7 @@ export const Title = styled.span`
 `;
 
 export const Text = styled.span`
-  width: 25%;
+  width: 90%;
   font-size: 0.9rem;
   color: #3f3f46;
   font-weight: 300;
@@ -79,7 +79,7 @@ export const Text = styled.span`
 `;
 
 export const Status = styled.span`
-  width: 25%;
+  width: 90%;
   font-size: 0.9rem;
   color: ${({ status }: Props2) => (status ? '#2563eb' : '#b45309')};
   font-weight: 600;

@@ -13,11 +13,15 @@ export const Wrapper = styled.div`
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
-  min-width: 16rem;
+  min-width: 90%;
   margin: 2rem;
   padding: 0.8rem;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
     rgba(17, 17, 26, 0.05) 0px 8px 32px;
+
+  @media (min-width: 20rem) {
+    min-width: 16rem;
+  }
 `;
 
 export const Title = styled.button`

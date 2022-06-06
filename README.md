@@ -1,41 +1,59 @@
 # Teste tecnico
 
-Tela de login e home-page com tratamento de api.
+## Descrição do Projeto
 
-O projeto e uma pagina de login que faz uma validação de entrada e que leva a uma home-page que faz uma requisação a uma api externa que por sua vez lista varias lojas
+Esse projeto foi desenvolvido para um teste técnico de frontend. Ele consiste em elaborar um sistema de login e página inicial de uma aplicação que consiste em listar Lojas que serão recebidas através de uma API.
 
-## Tecnologias ultilizadas
+Para elaboração dessa aplicação foi utilizado [React][react], [TypeScript][typescript] e a estilização foi feita esclusivamente com [StyledComponents][styledcomponent] e com foco em desenvolvimento "mobile first"
 
-- TypeScript
-- React
-- Hooks
-- Hook-Form
-- Axios
-- Yup
-- Styled component
 
-## Desafios do teste
+## Tecnologias Ultilizadas
 
-- Aprender como funciona e aplicar novas bibliotecas ao projeto
-- Criar uma estilização funcional totalmente do 0
-- Criar um projeto React com TypeScript
-- Gerenciamento de tempo
+- [TypeScript][typescript]
+- [React][react]
+- [ReactHooks][reacthooks]
+- [HookForm][hookform]
+- [Axios][axios]
+- [Yup][yup]
+- [StyledComponent][styledcomponent]
+
+
+## Desafios do Teste
+
+- Aprender como funciona e aplicar novas bibliotecas ao projeto;
+- Criar uma aplicação funcional totalmente do 0 utilizando [StyledComponents][styledcomponent] e [TypeScript][typescript];
+- Criar um projeto [React][react] com [TypeScript][typescript];
+- Gerenciamento de tempo;
+
 
 ## Lições aprendidas no teste
 
-- React-hook-form
-- Axios
-- Styled component
-- Tipagem do react com TypeScript
+- [react-hook-form][reacthookform]
+- [Axios][axios]
+- [StyledComponent][styledcomponent]
+- Tipagem do [React][react] com [TypeScript][typescript]
 
-## O que eu melhoraria em meu codigo
 
-- Testes unitarios
-- O requisito bonus: Ao enviar a requisição para Ativar, filtrar apenas os itens selecionados que estão inativos e
+## Pontos a melhorar
+
+- [ ] Testes unitarios
+- [ ] O requisito bonus: Ao enviar a requisição para Ativar, filtrar apenas os itens selecionados que estão inativos e
   vice-versa
+
 
 ## Autor
 
-| ![José gomes Ribeiro](https://avatars.githubusercontent.com/u/49007242?v=4) |
+|                       ![Josué Gomes Ribeiro][avatar]                        |
 | :-------------------------------------------------------------------------: |
-|              [Josué Gomes Ribeiro](https://github.com/Ryogazz)              |
+|                        [Josué Gomes Ribeiro][github]                        |
+
+[github]: https://github.com/Ryogazz
+[avatar]: https://avatars.githubusercontent.com/u/49007242?v=4
+[typescript]: https://www.typescriptlang.org/
+[react]: https://reactjs.org/
+[reacthooks]: https://reactjs.org/docs/hooks-intro.html
+[hookform]: https://react-hook-form.com/
+[axios]: https://axios-http.com/docs/intro
+[yup]: https://github.com/jquense/yup
+[styledcomponent]: https://styled-components.com/
+[reacthookform]: https://react-hook-form.com/

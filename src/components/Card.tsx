@@ -18,7 +18,9 @@ type Props = {
 
 export default function Card({ name, active, id }: Props) {
   // context api para o estado da aplicação (stores)
-  const { storesSelected, setStoresSelected, setToggleBg } = useContext(StoresContext);
+  const {
+    storesSelected, setStoresSelected, setToggleBg, setDetailedStoreId,
+  } = useContext(StoresContext);
   // estado do checkbox para ativar e desativar a loja
   const [isActive, setIsActive] = useState(false);
   // setando como selecionada a loja quando é clicando no checkbox
@@ -32,7 +34,16 @@ export default function Card({ name, active, id }: Props) {
 
   return (
     <Wrapper>
-      <Title type="button" onClick={() => setToggleBg(true)}>{name}</Title>
+      <Title
+        type="button"
+        onClick={() => {
+          setDetailedStoreId(id);
+          setToggleBg(true);
+        }}
+      >
+        {name}
+
+      </Title>
       <Checkbox isActive={isActive} setIsActive={setIsActive} />
       <Container>
         <Label active={active}>{active ? 'Ativo' : 'Inativo'}</Label>

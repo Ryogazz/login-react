@@ -9,13 +9,15 @@ import React, {
 import PropTypes from 'prop-types';
 import { getListStores } from '../utils/wapAPI';
 
-type Store = {
+export type Store = {
   id: number;
   name: string;
   active: boolean;
 };
 
 type StoresContextValues = {
+  detailedStoreId: number | null;
+  setDetailedStoreId: any;
   stores: Store[];
   search: string;
   setSearch: any;
@@ -31,6 +33,8 @@ type StoresContextValues = {
 };
 
 export const StoresContext = createContext<StoresContextValues>({
+  detailedStoreId: null,
+  setDetailedStoreId: () => {},
   setStores: () => {},
   stores: [],
   setStoresSelected: () => {},
@@ -56,6 +60,7 @@ export default function StoresProvider({ children }: Props) {
   const [token, setToken] = useState<string>(localStorage.getItem('token') || '');
   const [toggleBg, setToggleBg] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [detailedStoreId, setDetailedStoreId] = useState<number | null>(null);
 
   // Carrega as stores e faz o filtro de pesquisa
   useEffect(() => {
@@ -69,6 +74,8 @@ export default function StoresProvider({ children }: Props) {
   }, [search]);
 
   const values = {
+    detailedStoreId,
+    setDetailedStoreId,
     stores,
     setStores,
     storesSelected,

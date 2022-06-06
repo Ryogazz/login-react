@@ -32,4 +32,5 @@ export const LoadingBg = styled.div`
 export const LoadingTitle = styled.span`
   z-index: 100;
   font-size: 3rem;
+  color: #475569;
 `;
